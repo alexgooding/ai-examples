@@ -14,8 +14,22 @@
 w1 <- 0.2
 w2 <- 0.7
 
+# Lets say that a win results in reward of 1 and a loss results in nothing
+winAmount <- 1
+lossAmount <- 0
+
 epsilon <- 0.1
 
 q1 <- 0
 q2 <- 0
 
+# A function to simulate pulling an arm of the bandit
+pullArm <- function(armWinRate, winAmount, lossAmount) {
+  # random number between 0 and 1
+  x1 <- runif(1, 0.0, 1.0)
+  if (x1 <= armWinRate) {
+    return(winAmount)
+  } else {
+    return(lossAmount)
+  }
+}
