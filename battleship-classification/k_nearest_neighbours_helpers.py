@@ -1,5 +1,9 @@
 from scipy.spatial import distance
 
+"""
+A helper class for running the k-nearest neighbours algorithm.
+We make the assumption that there are no duplicate data points in this implementation.
+"""
 class k_nearest_neighbours_helper:
 
     def __init__(self, labels, data_points, k):
