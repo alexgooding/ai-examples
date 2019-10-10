@@ -7,7 +7,7 @@ We make the assumption that there are no duplicate data points in this implement
 """
 class k_nearest_neighbours_helper:
 
-    def __init__(self, labels, data_points, k):
+    def __init__(self, data_points, labels, k):
         # list of the labels corresponding to each data point
         self.labels = labels
         self.data_points = data_points
@@ -41,3 +41,6 @@ class k_nearest_neighbours_helper:
         self.data_points.append(new_point)
         self.labels.append(new_label)
         self.data_point_dict = dict(zip(self.data_points, self.labels))
+
+    def print_data(self):
+        print("Current data points: " + str(self.data_point_dict))
