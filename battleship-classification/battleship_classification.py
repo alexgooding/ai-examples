@@ -33,6 +33,10 @@ def create_2d_plot_for_two_classifiers(data_dict, label_names, new_points, dista
     fig.savefig('k_nearest_neighbours_graph.png')
     fig.show()
 
+"""
+Use the example of classification of unknown Axis and Allies ships in WW2.
+We also assume assume that it is likely ships travel in fleets - justifying the suitability of this algorithm.
+"""
 if __name__ == "__main__":
     ship_locations = [(random.random() * 10.0, random.random() * 10.0) for _ in range(100)]
     ship_labels = ["Axis"] * 50 + ["Allies"] * 50
