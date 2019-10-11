@@ -1,5 +1,6 @@
 from k_nearest_neighbours_helper import k_nearest_neighbours_helper
 import matplotlib.pyplot as plt
+import random
 
 """
 A function to show our simple battleships example more clearly
@@ -25,8 +26,8 @@ def create_2d_plot_for_two_classifiers(data_dict, label_names, new_points):
     plt.show()
 
 if __name__ == "__main__":
-    ship_locations = [(0, 1), (3, 2), (2, 2), (4, 3), (8, 9), (10, 10), (7, 9), (6, 5)]
-    ship_labels = ["Axis", "Axis", "Axis", "Axis", "Allies", "Allies", "Allies", "Allies"]
+    ship_locations = [(random.random() * 10.0, random.random() * 10.0) for _ in range(100)]
+    ship_labels = ["Axis"] * 50 + ["Allies"] * 50
     k = 3
     helper = k_nearest_neighbours_helper(ship_locations, ship_labels, k)
     new_point_1 = (1, 2)
