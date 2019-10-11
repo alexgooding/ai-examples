@@ -42,5 +42,9 @@ class k_nearest_neighbours_helper:
         self.labels.append(new_label)
         self.data_point_dict = dict(zip(self.data_points, self.labels))
 
+        print("Point " + str(new_point) + " classified as " + new_label)
+        # return the distance from the furthest neighbour used for plotting
+        return sorted_dict[self.k-1][1]
+
     def print_data(self):
         print("Current data points: " + str(self.data_point_dict))
