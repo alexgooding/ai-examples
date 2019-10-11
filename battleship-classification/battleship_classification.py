@@ -30,6 +30,11 @@ def create_2d_plot_for_two_classifiers(data_dict, label_names, new_points, dista
     # Draw on circles to indicate which neighbours were selected
     for i in range(len(new_points)):
         ax.add_artist(plt.Circle(new_points[i], distances_to_furthest_neighbour[i], color='g'))
+    # Add a title to the graph
+    fig.subplots_adjust(top=0.2)
+    fig.text(0.4, 0.95, label_names[0], ha="left", va="center", size="large", color="red")
+    fig.text(0.5, 0.95, "vs", ha="center", va="center", size="large")
+    fig.text(0.6, 0.95, label_names[1], ha="right", va="center", size="large", color="blue")
     fig.savefig('k_nearest_neighbours_graph.png')
     fig.show()
 
